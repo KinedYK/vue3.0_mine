@@ -15,28 +15,27 @@ module.exports = {
       '^/api': {
         target: '<url>',
         ws: true,
-        changeOrigin: true
+        changeOrigin: true,
       },
       '^/foo': {
-        target: '<other_url>'
-      }
+        target: '<other_url>',
+      },
     },
     overlay: {
       warnings: true,
-      errors: true
-    }
+      errors: true,
+    },
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that
     // it can be accessed in index.html to inject the correct title.
-    name: name,
+    // name: name,
     resolve: {
       alias: {
         '@': resolve('src'),
-      }
-    }
+      },
+    },
   },
   lintOnSave: process.env.NODE_ENV !== 'production',
   productionSourceMap: true,
-
 }

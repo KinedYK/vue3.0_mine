@@ -5,7 +5,7 @@ const getBaseUrl = (env) => {
     production: '/',
     development: 'http://localhost:3000',
     test: 'http://localhost:3001',
-  } [env]
+  }[env]
   if (!base) {
     base = '/'
   }
@@ -50,7 +50,7 @@ class HttpRequest {
             case '403':
               // todo: handler server forbidden error
               break
-              // todo: handler other status code
+            // todo: handler other status code
             default:
               break
           }
@@ -102,13 +102,15 @@ class HttpRequest {
         method: 'get',
         ...config,
         headers: {
-          'X-Requested-With': 'XMLHttpRequest'
+          'X-Requested-With': 'XMLHttpRequest',
         },
-      }).then((response) => {
-        resolve(response)
-      }).catch((error) => {
-        reject(error)
       })
+        .then((response) => {
+          resolve(response)
+        })
+        .catch((error) => {
+          reject(error)
+        })
     })
   }
 
@@ -121,13 +123,15 @@ class HttpRequest {
         method: 'post',
         ...config,
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
-      }).then((response) => {
-        resolve(response)
-      }).catch((error) => {
-        reject(error)
       })
+        .then((response) => {
+          resolve(response)
+        })
+        .catch((error) => {
+          reject(error)
+        })
     })
   }
 }
