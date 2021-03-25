@@ -10,7 +10,9 @@
   "dependencies": {
     "axios": "^0.20.0",
     "core-js": "^3.6.5",
-    "node-sass": "^4.14.1",
+    "less-loader": "5.0.0",
+    "postcss-adaptive": "^0.5.0",
+    "style-resources-loader": "^1.4.1",
     "vue": "^3.0.0-0",
     "vue-router": "^4.0.0-beta.12"
   },
@@ -21,21 +23,25 @@
     "@vue/compiler-sfc": "^3.0.0-0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0-0"
+    "eslint-plugin-vue": "^7.0.0-0",
+    "less": "^4.1.1",
+    "lib-flexible": "^0.3.2"
   },
   "eslintConfig": {
     "root": true,
     "env": {
       "node": true
     },
+    "rules": {
+      "vue/no-multiple-template-root": 0
+    },
     "extends": [
-      "plugin:vue/vue3-essential",
+      "plugin:vue/essential",
       "eslint:recommended"
     ],
     "parserOptions": {
       "parser": "babel-eslint"
-    },
-    "rules": {}
+    }
   },
   "browserslist": [
     "> 1%",

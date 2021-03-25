@@ -1,10 +1,11 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-const app = createApp(App)
+import { createApp } from 'vue';
+import App from './App.vue';
+import 'lib-flexible';
+const app = createApp(App);
 
 // js异常捕获：vue组件周期
 app.config.errorHandler = function(err, vm, info) {
-  console.log('errorHandler11:', err, info)
+  console.log('errorHandler11:', err, info);
   /**
    * TODO: 1. 通过动态创建img 的方式上传错误信息
    * eg: new Image().src = 'http://localhost:7001/monitor/error'+ '?info=xxxxxx'
@@ -16,16 +17,16 @@ app.config.errorHandler = function(err, vm, info) {
    * : 3) 将字符串转换为Base64
    * eg: window.btoa(JSON.stringify(objct))
    */
-}
+};
 
 // js异常捕获：同步、异步(settimeout)、资源加载
 window.addEventListener('unhandledrejection', (e) => {
-  throw e.reason
-})
+  throw e.reason;
+});
 
 // js异常捕获: 异步(promise | asnyc/await)
 window.addEventListener('error', (args) => {
-  console.log('error event: ', args)
-})
+  console.log('error event: ', args);
+});
 
-app.mount('#app')
+app.mount('#app');
